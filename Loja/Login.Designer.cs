@@ -36,7 +36,6 @@
             button1 = new Button();
             label3 = new Label();
             btnFuncionarios = new Button();
-            label4 = new Label();
             SuspendLayout();
             // 
             // txtUsuario
@@ -78,16 +77,10 @@
             btnFuncionarios.UseVisualStyleBackColor = true;
             btnFuncionarios.Click += btnFuncionarios_Click;
             // 
-            // label4
-            // 
-            resources.ApplyResources(label4, "label4");
-            label4.Name = "label4";
-            // 
             // Login
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(label4);
             Controls.Add(btnFuncionarios);
             Controls.Add(label3);
             Controls.Add(button1);
@@ -109,6 +102,5 @@
         private Button button1;
         private Label label3;
         private Button btnFuncionarios;
-        private Label label4;
     }
 }
