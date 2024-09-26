@@ -21,11 +21,11 @@ namespace Loja
             string databasePath = "loja.db";
             connectionManager = new SQLiteConnectionManager(databasePath);
 
-            // Carrega todos os clientes ao abrir o formulário
+            
             CarregarTodosClientes();
         }
 
-        // Método para carregar todos os clientes
+        
         private void CarregarTodosClientes()
         {
             string query = "SELECT * FROM Cliente";
@@ -40,7 +40,7 @@ namespace Loja
                     {
                         DataTable dt = new DataTable();
                         dt.Load(reader);
-                        dataGridViewClientes.DataSource = dt; // Atribui os clientes ao DataGridView
+                        dataGridViewClientes.DataSource = dt; 
                     }
                 }
 
@@ -81,7 +81,7 @@ namespace Loja
                 connectionManager.ExecuteNonQuery(deleteQuery);
 
                 MessageBox.Show("Cliente excluído com sucesso.");
-                CarregarTodosClientes(); // Atualiza a lista após a exclusão
+                CarregarTodosClientes(); 
             }
             else
             {
@@ -100,11 +100,11 @@ namespace Loja
                 string telefone = dataGridViewClientes.SelectedRows[0].Cells["Telefone"].Value?.ToString() ?? "Sem telefone";
                 string endereco = dataGridViewClientes.SelectedRows[0].Cells["Endereco"].Value?.ToString() ?? "Sem endereco";
 
-                // Abre o formulário de edição com os dados do cliente selecionado
+                
                 CadastroForm editarForm = new CadastroForm(id, nome, cpf, email, telefone, endereco);
                 editarForm.ShowDialog();
 
-                // Atualiza a lista de clientes após a edição
+                
                 CarregarTodosClientes();
             }
             else

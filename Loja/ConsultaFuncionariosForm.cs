@@ -21,7 +21,7 @@ namespace Loja
             string databasePath = "loja.db";
             connectionManager = new SQLiteConnectionManager(databasePath);
 
-            // Carrega a lista de funcionários ao abrir o formulário
+            
             CarregarFuncionarios();
         }
 
@@ -39,7 +39,7 @@ namespace Loja
                     {
                         DataTable dt = new DataTable();
                         dt.Load(reader);
-                        dataGridViewFuncionarios.DataSource = dt; // Atribui os clientes ao DataGridView
+                        dataGridViewFuncionarios.DataSource = dt; 
                     }
                 }
 
@@ -72,11 +72,11 @@ namespace Loja
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            // Abre o formulário de cadastro de funcionário para adicionar novo funcionário
+            
             CadastroFuncionarioForm cadastroFuncionarioForm = new CadastroFuncionarioForm();
             cadastroFuncionarioForm.ShowDialog();
 
-            // Recarrega a lista de funcionários após a adição
+            
             CarregarFuncionarios();
         }
 
@@ -84,17 +84,17 @@ namespace Loja
         {
             if (dataGridViewFuncionarios.SelectedRows.Count > 0)
             {
-                // Obtém os dados do funcionário selecionado
+                
                  int id = Convert.ToInt32(dataGridViewFuncionarios.SelectedRows[0].Cells["Id"].Value);
                  string nome = dataGridViewFuncionarios.SelectedRows[0].Cells["Nome"].Value?.ToString() ?? "Sem Nome";
                  string usuario = dataGridViewFuncionarios.SelectedRows[0].Cells["Usuario"].Value?.ToString() ?? "Sem Usuário";
                  string senha = dataGridViewFuncionarios.SelectedRows[0].Cells["Senha"].Value?.ToString() ?? "Sem Senha";
                 
-                // Abre o formulário de edição com os dados do funcionário selecionado
+                
                 CadastroFuncionarioForm editarForm = new CadastroFuncionarioForm(id, nome, usuario, senha);
                 editarForm.ShowDialog();
               
-                // Recarrega a lista de funcionários após a edição
+                
                 CarregarFuncionarios();
             }
             else
@@ -109,7 +109,7 @@ namespace Loja
             {
                 int id = Convert.ToInt32(dataGridViewFuncionarios.SelectedRows[0].Cells["Id"].Value);
 
-                // Confirma a exclusão
+                
                 DialogResult confirm = MessageBox.Show("Tem certeza que deseja excluir o funcionário?", "Excluir Funcionário", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (confirm == DialogResult.Yes)
                 {
@@ -129,7 +129,7 @@ namespace Loja
                     }
 
                     MessageBox.Show("Funcionário excluído com sucesso.");
-                    CarregarFuncionarios(); // Atualiza a lista de funcionários após a exclusão
+                    CarregarFuncionarios();
                 }
             }
             else

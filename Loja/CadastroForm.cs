@@ -13,30 +13,30 @@ namespace Loja
 {
     public partial class CadastroForm : Form
     {
-        private int? clienteId; // Usamos "int?" para permitir null, caso não seja uma edição
+        private int? clienteId; 
         private SQLiteConnectionManager connectionManager;
 
-        // Construtor para cadastro de um novo cliente (sem parâmetros)
+       
         public CadastroForm()
         {
             InitializeComponent();
-            clienteId = null; // Não está editando nenhum cliente
+            clienteId = null; 
             connectionManager = new SQLiteConnectionManager("loja.db");
         }
 
-        // Construtor para edição de cliente (com parâmetros)
+        
         public CadastroForm(int id, string nome, string cpf, string email, string telefone, string endereco)
         {
             InitializeComponent();
 
-            // Inicializa a conexão com o banco de dados
+            
             string databasePath = "loja.db";
             connectionManager = new SQLiteConnectionManager(databasePath);
 
-            // Armazena o ID do cliente que será editado
+            
             clienteId = id;
 
-            // Preenche os campos com os dados recebidos
+            
             txtNome.Text = nome;
             txtCPF.Text = cpf;
             txtEmail.Text = email;
@@ -46,7 +46,7 @@ namespace Loja
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            // Validações
+            
             if (string.IsNullOrEmpty(txtNome.Text) || string.IsNullOrEmpty(txtCPF.Text) || string.IsNullOrEmpty(txtEmail.Text) ||
                 string.IsNullOrEmpty(txtTelefone.Text) || string.IsNullOrEmpty(txtEndereco.Text))
             {
@@ -54,10 +54,10 @@ namespace Loja
                 return;
             }
 
-            // Se clienteId for null, significa que é um novo cadastro
+            
             if (clienteId == null)
             {
-                // Insere novo cliente no banco de dados
+                
                 string insertQuery = "INSERT INTO Cliente (Nome, CPF, Email, Telefone, Endereco) VALUES (@Nome, @CPF, @Email, @Telefone, @Endereco)";
                 using (var connection = connectionManager.GetConnection())
                 {
@@ -81,7 +81,7 @@ namespace Loja
             }
             else
             {
-                // Atualiza o cliente existente
+                
                 string updateQuery = @"UPDATE Cliente SET 
                                     Nome = @Nome, 
                                     CPF = @CPF, 
@@ -101,7 +101,7 @@ namespace Loja
                         command.Parameters.AddWithValue("@Email", txtEmail.Text);
                         command.Parameters.AddWithValue("@Telefone", txtTelefone.Text);
                         command.Parameters.AddWithValue("@Endereco", txtEndereco.Text);
-                        command.Parameters.AddWithValue("@Id", clienteId); // Atualiza o cliente pelo ID
+                        command.Parameters.AddWithValue("@Id", clienteId); 
 
                         command.ExecuteNonQuery();
                     }
@@ -112,7 +112,7 @@ namespace Loja
                 MessageBox.Show("Dados do cliente atualizados com sucesso.");
             }
 
-            this.Close(); // Fecha o formulário após salvar
+            this.Close(); 
         }
         private void btnLimpar_Click(object sender, EventArgs e)
         {
@@ -128,7 +128,7 @@ namespace Loja
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close(); // Fecha o formulário sem salvar
+            this.Close(); 
         }
     }
 

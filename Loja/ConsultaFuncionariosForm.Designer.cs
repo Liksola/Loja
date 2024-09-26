@@ -44,7 +44,7 @@
             // label1
             // 
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(12, 42);
+            label1.Location = new Point(60, 43);
             label1.Name = "label1";
             label1.Size = new Size(225, 69);
             label1.TabIndex = 0;
@@ -52,7 +52,7 @@
             // 
             // txtBuscarFuncionario
             // 
-            txtBuscarFuncionario.Location = new Point(12, 98);
+            txtBuscarFuncionario.Location = new Point(60, 99);
             txtBuscarFuncionario.Name = "txtBuscarFuncionario";
             txtBuscarFuncionario.Size = new Size(225, 23);
             txtBuscarFuncionario.TabIndex = 1;
@@ -62,15 +62,15 @@
             dataGridViewFuncionarios.AllowUserToOrderColumns = true;
             dataGridViewFuncionarios.BackgroundColor = SystemColors.Info;
             dataGridViewFuncionarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewFuncionarios.Location = new Point(270, 42);
+            dataGridViewFuncionarios.Location = new Point(318, 43);
             dataGridViewFuncionarios.Name = "dataGridViewFuncionarios";
-            dataGridViewFuncionarios.Size = new Size(491, 434);
+            dataGridViewFuncionarios.Size = new Size(425, 434);
             dataGridViewFuncionarios.TabIndex = 2;
             // 
             // btnAdicionar
             // 
             btnAdicionar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAdicionar.Location = new Point(12, 430);
+            btnAdicionar.Location = new Point(60, 431);
             btnAdicionar.Name = "btnAdicionar";
             btnAdicionar.Size = new Size(75, 46);
             btnAdicionar.TabIndex = 3;
@@ -81,7 +81,7 @@
             // btnEditar
             // 
             btnEditar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEditar.Location = new Point(12, 295);
+            btnEditar.Location = new Point(60, 296);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(75, 45);
             btnEditar.TabIndex = 4;
@@ -92,7 +92,7 @@
             // btnExcluir
             // 
             btnExcluir.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnExcluir.Location = new Point(130, 295);
+            btnExcluir.Location = new Point(178, 296);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.Size = new Size(75, 45);
             btnExcluir.TabIndex = 5;
@@ -104,7 +104,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(419, 9);
+            label2.Location = new Point(467, 10);
             label2.Name = "label2";
             label2.Size = new Size(185, 21);
             label2.TabIndex = 6;
@@ -113,7 +113,7 @@
             // bntBuscar
             // 
             bntBuscar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bntBuscar.Location = new Point(12, 146);
+            bntBuscar.Location = new Point(60, 147);
             bntBuscar.Name = "bntBuscar";
             bntBuscar.Size = new Size(75, 44);
             bntBuscar.TabIndex = 7;
@@ -124,7 +124,7 @@
             // label3
             // 
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(2, 208);
+            label3.Location = new Point(50, 209);
             label3.Name = "label3";
             label3.Size = new Size(262, 84);
             label3.TabIndex = 8;
@@ -133,7 +133,7 @@
             // label4
             // 
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(2, 359);
+            label4.Location = new Point(50, 360);
             label4.Name = "label4";
             label4.Size = new Size(230, 56);
             label4.TabIndex = 9;
@@ -143,7 +143,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(799, 515);
+            ClientSize = new Size(759, 515);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(bntBuscar);

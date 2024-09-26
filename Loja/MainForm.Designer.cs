@@ -40,9 +40,9 @@
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(78, 83);
             label1.Name = "label1";
-            label1.Size = new Size(204, 21);
+            label1.Size = new Size(212, 21);
             label1.TabIndex = 0;
-            label1.Text = "Escolha a opção desejada";
+            label1.Text = "Escolha a opção desejada :";
             // 
             // btnCadastrarCliente
             // 

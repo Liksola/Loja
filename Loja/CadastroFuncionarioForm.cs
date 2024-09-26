@@ -16,21 +16,21 @@ namespace Loja
         private SQLiteConnectionManager connectionManager;
 
 
-        private int? funcionarioId; // Para armazenar o ID do funcionário
+        private int? funcionarioId;
 
-        // Construtor para editar um funcionário existente
+        
         public CadastroFuncionarioForm(int id, string nome, string usuario, string senha)
         {
             connectionManager = new SQLiteConnectionManager("loja.db");
             InitializeComponent();
 
-            funcionarioId = id; // Armazena o ID do funcionário para edição
+            funcionarioId = id; 
 
-            // Preenche os campos com os dados recebidos
+            
             txtNome.Text = nome;
             txtUsuario.Text = usuario;
             txtSenha.Text = senha;
-            txtConfirmarSenha.Text = senha; // Preenche o campo de confirmação da senha
+            txtConfirmarSenha.Text = senha; 
         }
         public CadastroFuncionarioForm()
         {
@@ -41,7 +41,7 @@ namespace Loja
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            // Validações
+            
             if (string.IsNullOrEmpty(txtNome.Text) || string.IsNullOrEmpty(txtUsuario.Text) || string.IsNullOrEmpty(txtSenha.Text))
             {
                 MessageBox.Show("Todos os campos são obrigatórios.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -56,7 +56,7 @@ namespace Loja
 
             if (funcionarioId == null)
             {
-                // Insere o novo funcionário no banco de dados
+                
                 string query = "INSERT INTO Funcionarios (Nome, Usuario, Senha) VALUES (@Nome, @Usuario, @Senha)";
                 using (var connection = connectionManager.GetConnection())
                 {
@@ -77,7 +77,7 @@ namespace Loja
             }
             else 
             {
-                // Atualizar funcionário existente
+                
                 string updateQuery = @"UPDATE Funcionarios SET 
                                    Nome = @Nome, 
                                    Usuario = @Usuario, 
@@ -100,12 +100,12 @@ namespace Loja
             }
 
             
-            this.Close(); // Fecha a tela de cadastro após a inserção
+            this.Close(); 
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close(); // Fecha o formulário sem salvar
+            this.Close(); 
         }
     }
 
