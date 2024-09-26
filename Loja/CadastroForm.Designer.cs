@@ -82,62 +82,68 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(53, 178);
+            label1.Font = new Font("Segoe UI", 10F);
+            label1.Location = new Point(53, 174);
             label1.Name = "label1";
-            label1.Size = new Size(40, 15);
+            label1.Size = new Size(46, 19);
             label1.TabIndex = 5;
             label1.Text = "Nome";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(53, 202);
+            label2.Font = new Font("Segoe UI", 10F);
+            label2.Location = new Point(53, 203);
             label2.Name = "label2";
-            label2.Size = new Size(28, 15);
+            label2.Size = new Size(33, 19);
             label2.TabIndex = 6;
             label2.Text = "CPF";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(53, 228);
+            label3.Font = new Font("Segoe UI", 10F);
+            label3.Location = new Point(53, 232);
             label3.Name = "label3";
-            label3.Size = new Size(36, 15);
+            label3.Size = new Size(41, 19);
             label3.TabIndex = 7;
             label3.Text = "Email";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(53, 260);
+            label4.Font = new Font("Segoe UI", 10F);
+            label4.Location = new Point(53, 261);
             label4.Name = "label4";
-            label4.Size = new Size(54, 15);
+            label4.Size = new Size(63, 19);
             label4.TabIndex = 8;
             label4.Text = "Telefone ";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(53, 294);
+            label5.Font = new Font("Segoe UI", 10F);
+            label5.Location = new Point(53, 290);
             label5.Name = "label5";
-            label5.Size = new Size(56, 15);
+            label5.Size = new Size(65, 19);
             label5.TabIndex = 9;
             label5.Text = "Endereço";
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(62, 90);
+            label6.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(53, 47);
             label6.Name = "label6";
-            label6.Size = new Size(228, 15);
+            label6.Size = new Size(486, 61);
             label6.TabIndex = 10;
-            label6.Text = "Preencha corretamente os campos abaixo";
+            label6.Text = "Preencha corretamente todos                                      os campos abaixo";
             // 
             // btnSalvar
             // 
+            btnSalvar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSalvar.Location = new Point(53, 350);
             btnSalvar.Name = "btnSalvar";
-            btnSalvar.Size = new Size(75, 23);
+            btnSalvar.Size = new Size(75, 30);
             btnSalvar.TabIndex = 11;
             btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = true;
@@ -145,9 +151,10 @@
             // 
             // btnLimpar
             // 
+            btnLimpar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLimpar.Location = new Point(215, 350);
             btnLimpar.Name = "btnLimpar";
-            btnLimpar.Size = new Size(75, 23);
+            btnLimpar.Size = new Size(75, 30);
             btnLimpar.TabIndex = 12;
             btnLimpar.Text = "Limpar";
             btnLimpar.UseVisualStyleBackColor = true;
@@ -155,9 +162,10 @@
             // 
             // btnCancelar
             // 
+            btnCancelar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCancelar.Location = new Point(134, 350);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(75, 23);
+            btnCancelar.Size = new Size(75, 30);
             btnCancelar.TabIndex = 13;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
@@ -183,6 +191,7 @@
             Controls.Add(txtCPF);
             Controls.Add(txtNome);
             Name = "CadastroForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Tela de Cadastro";
             ResumeLayout(false);
             PerformLayout();

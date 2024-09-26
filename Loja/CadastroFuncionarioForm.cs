@@ -15,6 +15,23 @@ namespace Loja
     {
         private SQLiteConnectionManager connectionManager;
 
+
+        private int? funcionarioId; // Para armazenar o ID do funcionário
+
+        // Construtor para editar um funcionário existente
+        public CadastroFuncionarioForm(int id, string nome, string usuario, string senha)
+        {
+            connectionManager = new SQLiteConnectionManager("loja.db");
+            InitializeComponent();
+
+            funcionarioId = id; // Armazena o ID do funcionário para edição
+
+            // Preenche os campos com os dados recebidos
+            txtNome.Text = nome;
+            txtUsuario.Text = usuario;
+            txtSenha.Text = senha;
+            txtConfirmarSenha.Text = senha; // Preenche o campo de confirmação da senha
+        }
         public CadastroFuncionarioForm()
         {
             InitializeComponent();
@@ -37,25 +54,52 @@ namespace Loja
                 return;
             }
 
-            // Insere o novo funcionário no banco de dados
-            string query = "INSERT INTO Funcionarios (Nome, Usuario, Senha) VALUES (@Nome, @Usuario, @Senha)";
-            using (var connection = connectionManager.GetConnection())
+            if (funcionarioId == null)
             {
-                connectionManager.OpenConnection(connection);
-
-                using (var command = new SqliteCommand(query, connection))
+                // Insere o novo funcionário no banco de dados
+                string query = "INSERT INTO Funcionarios (Nome, Usuario, Senha) VALUES (@Nome, @Usuario, @Senha)";
+                using (var connection = connectionManager.GetConnection())
                 {
-                    command.Parameters.AddWithValue("@Nome", txtNome.Text);
-                    command.Parameters.AddWithValue("@Usuario", txtUsuario.Text);
-                    command.Parameters.AddWithValue("@Senha", txtSenha.Text);
+                    connectionManager.OpenConnection(connection);
 
-                    command.ExecuteNonQuery();
+                    using (var command = new SqliteCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Nome", txtNome.Text);
+                        command.Parameters.AddWithValue("@Usuario", txtUsuario.Text);
+                        command.Parameters.AddWithValue("@Senha", txtSenha.Text);
+
+                        command.ExecuteNonQuery();
+                    }
+
+                    connectionManager.CloseConnection(connection);
                 }
-
-                connectionManager.CloseConnection(connection);
+                MessageBox.Show("Funcionário cadastrado com sucesso.");
+            }
+            else 
+            {
+                // Atualizar funcionário existente
+                string updateQuery = @"UPDATE Funcionarios SET 
+                                   Nome = @Nome, 
+                                   Usuario = @Usuario, 
+                                   Senha = @Senha 
+                                   WHERE Id = @Id";
+                using (var connection = connectionManager.GetConnection())
+                {
+                    connectionManager.OpenConnection(connection);
+                    using (var command = new SqliteCommand(updateQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@Nome", txtNome.Text);
+                        command.Parameters.AddWithValue("@Usuario", txtUsuario.Text);
+                        command.Parameters.AddWithValue("@Senha", txtSenha.Text);
+                        command.Parameters.AddWithValue("@Id", funcionarioId);
+                        command.ExecuteNonQuery();
+                    }
+                    connectionManager.CloseConnection(connection);
+                }
+                MessageBox.Show("Dados do funcionário atualizados com sucesso.");
             }
 
-            MessageBox.Show("Funcionário cadastrado com sucesso.");
+            
             this.Close(); // Fecha a tela de cadastro após a inserção
         }
 

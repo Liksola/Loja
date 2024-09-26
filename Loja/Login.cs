@@ -49,14 +49,26 @@ namespace Loja
                 }
                 connectionManager.CloseConnection(connection);
             }
+
+        }
+        private void btnFuncionarios_Click(object sender, EventArgs e)
+        {
+            // Mostra uma caixa de diálogo pedindo a senha de administrador
+            string senhaAdm = Microsoft.VisualBasic.Interaction.InputBox("Digite a senha de administrador:", "Acesso Restrito", "");
+
+            // Valida se a senha é correta (no exemplo, "123")
+            if (senhaAdm == "123")
+            {
+                // Se a senha for correta, abre a tela de gerenciamento de funcionários
+                ConsultaFuncionariosForm consultaFuncionariosForm = new ConsultaFuncionariosForm();
+                consultaFuncionariosForm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Senha incorreta. Acesso negado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void btnCadastrarFuncionario_Click(object sender, EventArgs e)
-        {
-            // Abre o formulário de cadastro de funcionário
-            CadastroFuncionarioForm cadastroFuncionarioForm = new CadastroFuncionarioForm();
-            cadastroFuncionarioForm.Show();
-        }
     }
 
 }

@@ -21,6 +21,7 @@ namespace Loja
         {
             InitializeComponent();
             clienteId = null; // Não está editando nenhum cliente
+            connectionManager = new SQLiteConnectionManager("loja.db");
         }
 
         // Construtor para edição de cliente (com parâmetros)

@@ -45,78 +45,83 @@
             // 
             txtNome.Location = new Point(126, 124);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(100, 23);
+            txtNome.Size = new Size(127, 23);
             txtNome.TabIndex = 0;
             // 
             // txtUsuario
             // 
             txtUsuario.Location = new Point(126, 156);
             txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(100, 23);
+            txtUsuario.Size = new Size(127, 23);
             txtUsuario.TabIndex = 1;
             // 
             // txtConfirmarSenha
             // 
             txtConfirmarSenha.Location = new Point(126, 217);
             txtConfirmarSenha.Name = "txtConfirmarSenha";
-            txtConfirmarSenha.Size = new Size(100, 23);
+            txtConfirmarSenha.Size = new Size(127, 23);
             txtConfirmarSenha.TabIndex = 2;
             // 
             // txtSenha
             // 
             txtSenha.Location = new Point(126, 185);
             txtSenha.Name = "txtSenha";
-            txtSenha.Size = new Size(100, 23);
+            txtSenha.Size = new Size(127, 23);
             txtSenha.TabIndex = 3;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(25, 132);
+            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(24, 130);
             label1.Name = "label1";
-            label1.Size = new Size(40, 15);
+            label1.Size = new Size(44, 17);
             label1.TabIndex = 4;
             label1.Text = "Nome";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(25, 159);
+            label2.Font = new Font("Segoe UI", 10F);
+            label2.Location = new Point(24, 160);
             label2.Name = "label2";
-            label2.Size = new Size(47, 15);
+            label2.Size = new Size(56, 19);
             label2.TabIndex = 5;
             label2.Text = "Usuario";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(24, 220);
+            label3.Font = new Font("Segoe UI", 10F);
+            label3.Location = new Point(9, 221);
             label3.Name = "label3";
-            label3.Size = new Size(96, 15);
+            label3.Size = new Size(111, 19);
             label3.TabIndex = 6;
             label3.Text = "Confirmar Senha";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(24, 188);
+            label4.Font = new Font("Segoe UI", 10F);
+            label4.Location = new Point(25, 189);
             label4.Name = "label4";
-            label4.Size = new Size(39, 15);
+            label4.Size = new Size(46, 19);
             label4.TabIndex = 7;
             label4.Text = "Senha";
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(25, 69);
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(25, 37);
             label6.Name = "label6";
-            label6.Size = new Size(228, 15);
+            label6.Size = new Size(242, 63);
             label6.TabIndex = 11;
-            label6.Text = "Preencha corretamente os campos abaixo";
+            label6.Text = "Preencha corretamente os campos abaixo para cadastar um novo funcionário :";
             // 
             // btnSalvar
             // 
-            btnSalvar.Location = new Point(25, 283);
+            btnSalvar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSalvar.Location = new Point(45, 283);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(75, 43);
             btnSalvar.TabIndex = 12;
@@ -126,7 +131,8 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(178, 283);
+            btnCancelar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCancelar.Location = new Point(155, 283);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(75, 43);
             btnCancelar.TabIndex = 14;
@@ -151,6 +157,7 @@
             Controls.Add(txtUsuario);
             Controls.Add(txtNome);
             Name = "CadastroFuncionarioForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Tela de Cadastro de Funcionario";
             ResumeLayout(false);
             PerformLayout();

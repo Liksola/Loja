@@ -37,14 +37,16 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(103, 65);
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(78, 83);
             label1.Name = "label1";
-            label1.Size = new Size(141, 15);
+            label1.Size = new Size(204, 21);
             label1.TabIndex = 0;
             label1.Text = "Escolha a opção desejada";
             // 
             // btnCadastrarCliente
             // 
+            btnCadastrarCliente.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCadastrarCliente.Location = new Point(116, 149);
             btnCadastrarCliente.Name = "btnCadastrarCliente";
             btnCadastrarCliente.Size = new Size(128, 49);
@@ -55,6 +57,7 @@
             // 
             // btnConsultarCliente
             // 
+            btnConsultarCliente.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnConsultarCliente.Location = new Point(116, 218);
             btnConsultarCliente.Name = "btnConsultarCliente";
             btnConsultarCliente.Size = new Size(128, 49);
@@ -65,7 +68,8 @@
             // 
             // btnSair
             // 
-            btnSair.Location = new Point(145, 394);
+            btnSair.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSair.Location = new Point(143, 372);
             btnSair.Name = "btnSair";
             btnSair.Size = new Size(74, 44);
             btnSair.TabIndex = 3;
@@ -83,7 +87,8 @@
             Controls.Add(btnCadastrarCliente);
             Controls.Add(label1);
             Name = "MainForm";
-            Text = "MainForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Tela de escolha";
             ResumeLayout(false);
             PerformLayout();
         }
